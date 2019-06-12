@@ -11,3 +11,4 @@
 |
 */
 Route::get('/question/index','QuestionController@index');
+Route::get('/question/detail','QuestionController@show');
