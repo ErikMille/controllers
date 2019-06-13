@@ -12,3 +12,4 @@
 */
 Route::get('/question/index','QuestionController@index');
 Route::get('/question/detail','QuestionController@show');
+Route::get('/category','CategoryController@index');
