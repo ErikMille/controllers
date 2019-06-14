@@ -4,19 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Answer;
+use App\Question;
 class QuestionController extends Controller
 {
     public function index(){
-        $query=DB::table('answers')->get();
-        dd($query);
-        return 'This is the list of questions';
+        $questions=Question::get();
+        // dd($questions);
+        return view('questions/index',[
+            'questions'=>$questions
+        ]);
+        
     }
     public function show(){
-        $query=DB::table('answers')
-            ->where('user_id', 1)
-            ->select('id')
-            ->get();
-        dd($query);
-        return 'This is a detail of a question';
+        $question=Question::first();
+        $answers=Answer::get();
+        $answers=$question->answers;
+    
+        return view('questions/show',[
+            'question'=>$question,
+            'answers'=>$answers]);
     }
 }
