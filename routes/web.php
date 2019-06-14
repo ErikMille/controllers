@@ -13,3 +13,6 @@
 Route::get('/question/index','QuestionController@index');
 Route::get('/question/detail','QuestionController@show');
 Route::get('/category','CategoryController@index');
+Route::get('/answers/1','AnswerController@show');
+Route::post('/answers/1','AnswerController@vote');
+

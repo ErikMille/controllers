@@ -10,7 +10,7 @@ class QuestionController extends Controller
 {
     public function index(){
         $questions=Question::get();
-        // dd($questions);
+        //dd($questions);
         return view('questions/index',[
             'questions'=>$questions
         ]);
@@ -20,7 +20,6 @@ class QuestionController extends Controller
         $question=Question::first();
         $answers=Answer::get();
         $answers=$question->answers;
-    
         return view('questions/show',[
             'question'=>$question,
             'answers'=>$answers]);
