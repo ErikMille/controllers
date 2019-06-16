@@ -16,12 +16,9 @@ class QuestionController extends Controller
         ]);
         
     }
-    public function show(){
-        $question=Question::first();
-        $answers=Answer::get();
-        $answers=$question->answers;
+    public function show($id){
+        $question=Question::find($id);
         return view('questions/show',[
-            'question'=>$question,
-            'answers'=>$answers]);
+            'question'=>$question]);
     }
 }

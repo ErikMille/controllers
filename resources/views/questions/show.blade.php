@@ -38,8 +38,8 @@
 <section id="answers">
 
     <div class="container">
-        <h2>{{count($answers)}} Answers</h2>
-        @foreach($answers as $answer)
+        <h2>{{count($question->answers)}} Answers</h2>
+        @foreach($question->answers as $answer)
         <div class="answer">
             <div class="answer-left">
                 <div class="user-avatar">
@@ -54,7 +54,7 @@
                     </div>
                     <div class="user-stat">
                         <span>5</span>
-                        <label>votes</label>
+                        <label><a href="{{route('answer.show',$answer->id)}}">votes</a></label>
                     </div>
                 </div>
             </div>
